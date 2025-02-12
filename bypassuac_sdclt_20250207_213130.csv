@@ -1,0 +1,449 @@
+"Message","Id","Version","Qualifiers","Level","Task","Opcode","Keywords","RecordId","ProviderName","ProviderId","LogName","ProcessId","ThreadId","MachineName","UserId","TimeCreated","ActivityId","RelatedActivityId","ContainerLog","MatchedQueryIds","Bookmark","LevelDisplayName","OpcodeDisplayName","TaskDisplayName","KeywordsDisplayNames","Properties"
+"Registry value set:
+RuleName: T1031,T1050
+EventType: SetValue
+UtcTime: 2025-02-07 14:32:24.671
+ProcessGuid: {425f3eb2-183f-67a6-0b00-000000000e00}
+ProcessId: 600
+Image: C:\Windows\system32\services.exe
+TargetObject: HKLM\System\CurrentControlSet\Services\hulvof\Start
+Details: DWORD (0x00000004)
+User: NT AUTHORITY\SYSTEM","13","2",,"4","13","0","-9223372036854775808","15500","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:24 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Registry value set (rule: RegistryEvent)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:24.619
+ProcessGuid: {425f3eb2-1978-67a6-de01-000000000e00}
+ProcessId: 7488
+Image: C:\Windows\System32\cmd.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Windows Command Processor
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: Cmd.Exe
+CommandLine: cmd.exe /c echo hulvof > \\.\pipe\hulvof
+CurrentDirectory: C:\Windows\system32\
+User: NT AUTHORITY\SYSTEM
+LogonGuid: {425f3eb2-183f-67a6-e703-000000000000}
+LogonId: 0x3E7
+TerminalSessionId: 0
+IntegrityLevel: System
+Hashes: MD5=9D59442313565C2E0860B88BF32B2277,SHA256=D0CEB18272966AB62B8EDFF100E9B4A6A3CB5DC0F2A32B2B18721FEA2D9C09A5,IMPHASH=272245E2988E1E430500B852C4FB5E18
+ParentProcessGuid: {425f3eb2-183f-67a6-0b00-000000000e00}
+ParentProcessId: 600
+ParentImage: C:\Windows\System32\services.exe
+ParentCommandLine: C:\Windows\system32\services.exe
+ParentUser: NT AUTHORITY\SYSTEM","1","5",,"4","1","0","-9223372036854775808","15499","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:24 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Registry value set:
+RuleName: T1031,T1050
+EventType: SetValue
+UtcTime: 2025-02-07 14:32:24.609
+ProcessGuid: {425f3eb2-183f-67a6-0b00-000000000e00}
+ProcessId: 600
+Image: C:\Windows\system32\services.exe
+TargetObject: HKLM\System\CurrentControlSet\Services\hulvof\ImagePath
+Details: cmd.exe /c echo hulvof > \\.\pipe\hulvof
+User: NT AUTHORITY\SYSTEM","13","2",,"4","13","0","-9223372036854775808","15498","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:24 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Registry value set (rule: RegistryEvent)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Registry value set:
+RuleName: T1031,T1050
+EventType: SetValue
+UtcTime: 2025-02-07 14:32:24.609
+ProcessGuid: {425f3eb2-183f-67a6-0b00-000000000e00}
+ProcessId: 600
+Image: C:\Windows\system32\services.exe
+TargetObject: HKLM\System\CurrentControlSet\Services\hulvof\Start
+Details: DWORD (0x00000003)
+User: NT AUTHORITY\SYSTEM","13","2",,"4","13","0","-9223372036854775808","15497","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:24 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Registry value set (rule: RegistryEvent)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Registry value set:
+RuleName: T1042
+EventType: SetValue
+UtcTime: 2025-02-07 14:32:20.796
+ProcessGuid: {425f3eb2-1843-67a6-7800-000000000e00}
+ProcessId: 5076
+Image: C:\Windows\Explorer.EXE
+TargetObject: HKU\S-1-5-21-2810783064-3530294918-2968498012-1000\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.exe\OpenWithProgids\exefile
+Details: Binary Data
+User: DESKTOP-F21NMCI\admin","13","2",,"4","13","0","-9223372036854775808","15496","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:20 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Registry value set (rule: RegistryEvent)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:15.082
+ProcessGuid: {425f3eb2-196f-67a6-dd01-000000000e00}
+ProcessId: 624
+Image: C:\Windows\System32\taskhostw.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Host Process for Windows Tasks
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: taskhostw.exe
+CommandLine: taskhostw.exe Logon
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=DE1185DC5EA6E4A153AF5696C88E610D,SHA256=FD58E34C18455D20C686C6C9297A5DCD7113A68B6F83F7EBA260D1E32B07FEC4,IMPHASH=9CB27CAED52CB0AFFB32788922A0D083
+ParentProcessGuid: {425f3eb2-1840-67a6-1b00-000000000e00}
+ParentProcessId: 1124
+ParentImage: C:\Windows\System32\svchost.exe
+ParentCommandLine: C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule
+ParentUser: NT AUTHORITY\SYSTEM","1","5",,"4","1","0","-9223372036854775808","15495","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:15 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Network connection detected:
+RuleName: Usermode
+UtcTime: 2025-02-07 14:32:13.017
+ProcessGuid: {425f3eb2-196d-67a6-dc01-000000000e00}
+ProcessId: 3236
+Image: C:\Users\admin\AppData\Local\Temp\YizJGu.exe
+User: DESKTOP-F21NMCI\admin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 192.168.228.130
+SourceHostname: DESKTOP-F21NMCI.localdomain
+SourcePort: 49843
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 192.168.228.131
+DestinationHostname: -
+DestinationPort: 4445
+DestinationPortName: -","3","5",,"4","3","0","-9223372036854775808","15494","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","4220","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:14 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Network connection detected (rule: NetworkConnect)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:13.002
+ProcessGuid: {425f3eb2-196d-67a6-dc01-000000000e00}
+ProcessId: 3236
+Image: C:\Users\admin\AppData\Local\Temp\YizJGu.exe
+FileVersion: -
+Description: -
+Product: -
+Company: -
+OriginalFileName: -
+CommandLine: C:\Users\admin\AppData\Local\Temp\YizJGu.exe 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-226f-020000000000}
+LogonId: 0x26F22
+TerminalSessionId: 1
+IntegrityLevel: High
+Hashes: MD5=9FF89077A967D61064B46A51AC3245F1,SHA256=65BD7B9A68221961AFB0CD4668E2AB7DEF4162CB9086595C1FED061799529120,IMPHASH=B4C6FFF030479AA3B12625BE67BF4914
+ParentProcessGuid: {425f3eb2-196c-67a6-da01-000000000e00}
+ParentProcessId: 1572
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: ""C:\Windows\System32\cmd.exe"" /c start C:\Users\admin\AppData\Local\Temp\YizJGu.exe
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15493","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:13 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.948
+ProcessGuid: {425f3eb2-196c-67a6-da01-000000000e00}
+ProcessId: 1572
+Image: C:\Windows\System32\cmd.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Windows Command Processor
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: Cmd.Exe
+CommandLine: ""C:\Windows\System32\cmd.exe"" /c start C:\Users\admin\AppData\Local\Temp\YizJGu.exe
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-226f-020000000000}
+LogonId: 0x26F22
+TerminalSessionId: 1
+IntegrityLevel: High
+Hashes: MD5=9D59442313565C2E0860B88BF32B2277,SHA256=D0CEB18272966AB62B8EDFF100E9B4A6A3CB5DC0F2A32B2B18721FEA2D9C09A5,IMPHASH=272245E2988E1E430500B852C4FB5E18
+ParentProcessGuid: {425f3eb2-196c-67a6-d801-000000000e00}
+ParentProcessId: 3304
+ParentImage: C:\Windows\System32\control.exe
+ParentCommandLine: ""C:\Windows\System32\control.exe""  /name Microsoft.BackupAndRestoreCenter
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15492","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.908
+ProcessGuid: {425f3eb2-196c-67a6-d901-000000000e00}
+ProcessId: 2364
+Image: C:\Windows\SysWOW64\dllhost.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: COM Surrogate
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: dllhost.exe
+CommandLine: C:\Windows\SysWOW64\DllHost.exe /Processid:{06622D85-6856-4460-8DE1-A81921B41C4B}
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-226f-020000000000}
+LogonId: 0x26F22
+TerminalSessionId: 1
+IntegrityLevel: High
+Hashes: MD5=60D0B50CFF3A0722ADC274F49FB16F14,SHA256=4B878483EB200C8731F95096EEF036F285BD36AB916FE550DD484B872E60D037,IMPHASH=FB1328DBA53A95E7775F51164B2E5AEB
+ParentProcessGuid: {425f3eb2-183f-67a6-0e00-000000000e00}
+ParentProcessId: 776
+ParentImage: C:\Windows\System32\svchost.exe
+ParentCommandLine: C:\Windows\system32\svchost.exe -k DcomLaunch -p
+ParentUser: NT AUTHORITY\SYSTEM","1","5",,"4","1","0","-9223372036854775808","15491","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.895
+ProcessGuid: {425f3eb2-196c-67a6-d801-000000000e00}
+ProcessId: 3304
+Image: C:\Windows\System32\control.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Windows Control Panel
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: CONTROL.EXE
+CommandLine: ""C:\Windows\System32\control.exe""  /name Microsoft.BackupAndRestoreCenter
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-226f-020000000000}
+LogonId: 0x26F22
+TerminalSessionId: 1
+IntegrityLevel: High
+Hashes: MD5=62D970D8B60F75C12D21C740F2D8A5DA,SHA256=D6E21DA3BE0701162A36F8C9F94E616B1A0C5FD4CC1B52EFD81959CB257957C1,IMPHASH=7A8EC2645C24D85DE8216D63022623C0
+ParentProcessGuid: {425f3eb2-196c-67a6-d701-000000000e00}
+ParentProcessId: 8836
+ParentImage: C:\Windows\System32\sdclt.exe
+ParentCommandLine: ""C:\Windows\System32\sdclt.exe"" 
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15490","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.864
+ProcessGuid: {425f3eb2-196c-67a6-d701-000000000e00}
+ProcessId: 8836
+Image: C:\Windows\System32\sdclt.exe
+FileVersion: 10.0.18362.329 (WinBuild.160101.0800)
+Description: Microsoft? Windows Backup
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: sdclt.exe
+CommandLine: ""C:\Windows\System32\sdclt.exe"" 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-226f-020000000000}
+LogonId: 0x26F22
+TerminalSessionId: 1
+IntegrityLevel: High
+Hashes: MD5=B1AAC89F2DE057668CB7484C0DCB69AE,SHA256=E01DA4A9BCA82BB27C634C8419A7745DD237C20D2BF8376861B29BCA980C43D2,IMPHASH=AACB1F271E52307A5D3490C6FC19417E
+ParentProcessGuid: {425f3eb2-196c-67a6-d201-000000000e00}
+ParentProcessId: 900
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: cmd.exe /c ""C:\Windows\System32\sdclt.exe""
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15489","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.820
+ProcessGuid: {425f3eb2-196c-67a6-d601-000000000e00}
+ProcessId: 8688
+Image: C:\Windows\System32\consent.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Consent UI for administrative applications
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: consent.exe
+CommandLine: consent.exe 6884 300 00000271D7A07ED0
+CurrentDirectory: C:\Windows\system32\
+User: NT AUTHORITY\SYSTEM
+LogonGuid: {425f3eb2-183f-67a6-e703-000000000000}
+LogonId: 0x3E7
+TerminalSessionId: 1
+IntegrityLevel: System
+Hashes: MD5=EE2A1C85C472F89B146CC8EE598CCCBC,SHA256=19FD0010DA92B654D1CA270247061A39EA13C0A58529FD8257A97E2EF7794911,IMPHASH=522D83761201075834F05037F5307949
+ParentProcessGuid: {425f3eb2-1865-67a6-f000-000000000e00}
+ParentProcessId: 6884
+ParentImage: C:\Windows\System32\svchost.exe
+ParentCommandLine: C:\Windows\system32\svchost.exe -k netsvcs -p -s Appinfo
+ParentUser: NT AUTHORITY\SYSTEM","1","5",,"4","1","0","-9223372036854775808","15488","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.817
+ProcessGuid: {425f3eb2-196c-67a6-d501-000000000e00}
+ProcessId: 5968
+Image: C:\Windows\System32\sdclt.exe
+FileVersion: 10.0.18362.329 (WinBuild.160101.0800)
+Description: Microsoft? Windows Backup
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: sdclt.exe
+CommandLine: ""C:\Windows\System32\sdclt.exe"" 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=B1AAC89F2DE057668CB7484C0DCB69AE,SHA256=E01DA4A9BCA82BB27C634C8419A7745DD237C20D2BF8376861B29BCA980C43D2,IMPHASH=AACB1F271E52307A5D3490C6FC19417E
+ParentProcessGuid: {425f3eb2-196c-67a6-d201-000000000e00}
+ParentProcessId: 900
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: cmd.exe /c ""C:\Windows\System32\sdclt.exe""
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15487","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.785
+ProcessGuid: {425f3eb2-196c-67a6-d401-000000000e00}
+ProcessId: 6756
+Image: C:\Windows\System32\sdclt.exe
+FileVersion: 10.0.18362.329 (WinBuild.160101.0800)
+Description: Microsoft? Windows Backup
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: sdclt.exe
+CommandLine: C:\Windows\System32\sdclt.exe
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=B1AAC89F2DE057668CB7484C0DCB69AE,SHA256=E01DA4A9BCA82BB27C634C8419A7745DD237C20D2BF8376861B29BCA980C43D2,IMPHASH=AACB1F271E52307A5D3490C6FC19417E
+ParentProcessGuid: {425f3eb2-196c-67a6-d201-000000000e00}
+ParentProcessId: 900
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: cmd.exe /c ""C:\Windows\System32\sdclt.exe""
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15486","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:12.766
+ProcessGuid: {425f3eb2-196c-67a6-d201-000000000e00}
+ProcessId: 900
+Image: C:\Windows\System32\cmd.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Windows Command Processor
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: Cmd.Exe
+CommandLine: cmd.exe /c ""C:\Windows\System32\sdclt.exe""
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=9D59442313565C2E0860B88BF32B2277,SHA256=D0CEB18272966AB62B8EDFF100E9B4A6A3CB5DC0F2A32B2B18721FEA2D9C09A5,IMPHASH=272245E2988E1E430500B852C4FB5E18
+ParentProcessGuid: {425f3eb2-1873-67a6-fc00-000000000e00}
+ParentProcessId: 8172
+ParentImage: C:\Windows\System32\RuntimeBroker.exe
+ParentCommandLine: C:\Windows\System32\RuntimeBroker.exe -Embedding
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15485","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"File created:
+RuleName: EXE
+UtcTime: 2025-02-07 14:32:12.593
+ProcessGuid: {425f3eb2-1873-67a6-fc00-000000000e00}
+ProcessId: 8172
+Image: C:\Windows\System32\RuntimeBroker.exe
+TargetFilename: C:\Users\admin\AppData\Local\Temp\YizJGu.exe
+CreationUtcTime: 2025-02-07 14:32:12.593
+User: DESKTOP-F21NMCI\admin","11","2",,"4","11","0","-9223372036854775808","15484","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","File created (rule: FileCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Registry value set:
+RuleName: T1042
+EventType: SetValue
+UtcTime: 2025-02-07 14:32:12.530
+ProcessGuid: {425f3eb2-1873-67a6-fc00-000000000e00}
+ProcessId: 8172
+Image: C:\Windows\System32\RuntimeBroker.exe
+TargetObject: HKU\S-1-5-21-2810783064-3530294918-2968498012-1000_Classes\Folder\shell\open\command\(Default)
+Details: C:\Windows\System32\cmd.exe /c start C:\Users\admin\AppData\Local\Temp\YizJGu.exe
+User: DESKTOP-F21NMCI\admin","13","2",,"4","13","0","-9223372036854775808","15483","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Registry value set (rule: RegistryEvent)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Registry value set:
+RuleName: T1042
+EventType: SetValue
+UtcTime: 2025-02-07 14:32:12.468
+ProcessGuid: {425f3eb2-1873-67a6-fc00-000000000e00}
+ProcessId: 8172
+Image: C:\Windows\System32\RuntimeBroker.exe
+TargetObject: HKU\S-1-5-21-2810783064-3530294918-2968498012-1000_Classes\Folder\shell\open\command\DelegateExecute
+Details: (Empty)
+User: DESKTOP-F21NMCI\admin","13","2",,"4","13","0","-9223372036854775808","15482","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:12 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Registry value set (rule: RegistryEvent)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:11.933
+ProcessGuid: {425f3eb2-196b-67a6-d101-000000000e00}
+ProcessId: 8864
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: whoami  /groups 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=2EEEEC89E705F73FFBCAE014E1828788,SHA256=A8A4C4719113B071BB50D67F6E12C188B92C70EEAFDFCD6F5DA69B6AAA99A7FD,IMPHASH=7FF0758B766F747CE57DFAC70743FB88
+ParentProcessGuid: {425f3eb2-196b-67a6-cf01-000000000e00}
+ParentProcessId: 4516
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: cmd.exe /c whoami /groups 
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15481","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:11 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:11.907
+ProcessGuid: {425f3eb2-196b-67a6-cf01-000000000e00}
+ProcessId: 4516
+Image: C:\Windows\System32\cmd.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Windows Command Processor
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: Cmd.Exe
+CommandLine: cmd.exe /c whoami /groups 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=9D59442313565C2E0860B88BF32B2277,SHA256=D0CEB18272966AB62B8EDFF100E9B4A6A3CB5DC0F2A32B2B18721FEA2D9C09A5,IMPHASH=272245E2988E1E430500B852C4FB5E18
+ParentProcessGuid: {425f3eb2-1873-67a6-fc00-000000000e00}
+ParentProcessId: 8172
+ParentImage: C:\Windows\System32\RuntimeBroker.exe
+ParentCommandLine: C:\Windows\System32\RuntimeBroker.exe -Embedding
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15480","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:11 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:11.706
+ProcessGuid: {425f3eb2-196b-67a6-ce01-000000000e00}
+ProcessId: 7376
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: whoami  /groups 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=2EEEEC89E705F73FFBCAE014E1828788,SHA256=A8A4C4719113B071BB50D67F6E12C188B92C70EEAFDFCD6F5DA69B6AAA99A7FD,IMPHASH=7FF0758B766F747CE57DFAC70743FB88
+ParentProcessGuid: {425f3eb2-196b-67a6-cc01-000000000e00}
+ParentProcessId: 7364
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: cmd.exe /c whoami /groups 
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15479","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:11 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
+"Process Create:
+RuleName: -
+UtcTime: 2025-02-07 14:32:11.678
+ProcessGuid: {425f3eb2-196b-67a6-cc01-000000000e00}
+ProcessId: 7364
+Image: C:\Windows\System32\cmd.exe
+FileVersion: 10.0.18362.1 (WinBuild.160101.0800)
+Description: Windows Command Processor
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: Cmd.Exe
+CommandLine: cmd.exe /c whoami /groups 
+CurrentDirectory: C:\Windows\system32\
+User: DESKTOP-F21NMCI\admin
+LogonGuid: {425f3eb2-1841-67a6-7c6f-020000000000}
+LogonId: 0x26F7C
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: MD5=9D59442313565C2E0860B88BF32B2277,SHA256=D0CEB18272966AB62B8EDFF100E9B4A6A3CB5DC0F2A32B2B18721FEA2D9C09A5,IMPHASH=272245E2988E1E430500B852C4FB5E18
+ParentProcessGuid: {425f3eb2-1873-67a6-fc00-000000000e00}
+ParentProcessId: 8172
+ParentImage: C:\Windows\System32\RuntimeBroker.exe
+ParentCommandLine: C:\Windows\System32\RuntimeBroker.exe -Embedding
+ParentUser: DESKTOP-F21NMCI\admin","1","5",,"4","1","0","-9223372036854775808","15478","Microsoft-Windows-Sysmon","5770385f-c22a-43e0-bf4c-06f5698ffbd9","Microsoft-Windows-Sysmon/Operational","3164","5180","DESKTOP-F21NMCI","S-1-5-18","2/7/2025 9:32:11 PM",,,"Microsoft-Windows-Sysmon/Operational","System.UInt32[]","System.Diagnostics.Eventing.Reader.EventBookmark","Information","Info","Process Create (rule: ProcessCreate)","System.Collections.ObjectModel.ReadOnlyCollection`1[System.String]","System.Collections.Generic.List`1[System.Diagnostics.Eventing.Reader.EventProperty]"
