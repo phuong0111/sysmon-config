@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Sysmon schemaversion="4.81">
+  <HashAlgorithms>md5,sha256,IMPHASH</HashAlgorithms>
+  <EventFiltering>
+    <!-- Process Creation Rules for UAC Bypass Detection -->
+    <RuleGroup name="UAC Bypass Detection" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!-- UACME #23 - DISM XML -->
+        <Rule name="UACME23" groupRelation="and">
+          <ParentCommandLine condition="contains">c:\windows\system32\dism.exe</ParentCommandLine>
+          <ParentCommandLine condition="contains">.xml</ParentCommandLine>
+          <Image condition="not begin with">c:\users\</Image>
+          <Image condition="not end with">\dismhost.exe</Image>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+
+        <!-- UACME #33 - Fodhelper -->
+        <Rule name="UACME33">
+          <ParentImage condition="is">c:\windows\system32\fodhelper.exe</ParentImage>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+
+        <!-- UACME #36 - WUSA -->
+        <Rule name="UACME36" groupRelation="and">
+          <CommandLine condition="contains">c:\windows\system32\wusa.exe</CommandLine>
+          <CommandLine condition="contains">/quiet</CommandLine>
+          <CurrentDirectory condition="is">c:\windows\system32\</CurrentDirectory>
+          <ParentImage condition="is not">c:\windows\explorer.exe</ParentImage>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+
+        <!-- UACME #34 - Cleanmgr -->
+        <Rule name="UACME34">
+          <CommandLine condition="contains">cleanmgr.exe /autoclean</CommandLine>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+
+        <!-- UACME #37 - DCCW -->
+        <Rule name="UACME37" groupRelation="and">
+          <ParentImage condition="contains">c:\windows\dccw.exe</ParentImage>
+          <Image condition="is not">c:\windows\system32\cttune.exe</Image>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+
+        <!-- UACME #32 - OSK -->
+        <Rule name="UACME32">
+          <Image condition="is">c:\program files\windows media player\osk.exe</Image>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+
+        <!-- UACME #45 - SLUI -->
+        <Rule name="UACME45">
+          <ParentImage condition="is">c:\windows\system32\slui.exe</ParentImage>
+          <IntegrityLevel>High</IntegrityLevel>
+        </Rule>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- Default exclude rules to reduce noise -->
+    <ProcessCreate onmatch="exclude">
+      <IntegrityLevel>AppContainer</IntegrityLevel>
+      <IntegrityLevel>Low</IntegrityLevel>
+    </ProcessCreate>
+  </EventFiltering>
+</Sysmon>

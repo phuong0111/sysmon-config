@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Sysmon schemaversion="4.50">
+    <HashAlgorithms>sha256</HashAlgorithms>
+    <EventFiltering>
+        <RuleGroup name="Process Creation" groupRelation="or">
+            <!-- Office Applications Process Creation -->
+            <ProcessCreate onmatch="include">
+                <Rule name="Office Suspicious Children">
+                    <ParentImage condition="contains">WINWORD.EXE</ParentImage>
+                    <ParentImage condition="contains">EXCEL.EXE</ParentImage>
+                    <ParentImage condition="contains">POWERPNT.EXE</ParentImage>
+                    <ParentImage condition="contains">OUTLOOK.EXE</ParentImage>
+                    <Image condition="is">cmd.exe</Image>
+                    <Image condition="is">powershell.exe</Image>
+                    <Image condition="is">mshta.exe</Image>
+                    <Image condition="is">wscript.exe</Image>
+                    <Image condition="is">cscript.exe</Image>
+                    <Image condition="is">regsvr32.exe</Image>
+                    <Image condition="is">rundll32.exe</Image>
+                    <Image condition="is">msiexec.exe</Image>
+                </Rule>
+
+                <!-- PowerShell Suspicious Flags -->
+                <Rule name="PowerShell Suspicious Flags">
+                    <!-- Execution Policy Bypass -->
+                    <CommandLine condition="contains">-ExecutionPolicy</CommandLine>
+                    <CommandLine condition="contains">-ep</CommandLine>
+                    <CommandLine condition="contains">bypass</CommandLine>
+                    
+                    <!-- Encoding and Obfuscation -->
+                    <CommandLine condition="contains">-enc</CommandLine>
+                    <CommandLine condition="contains">-encodedcommand</CommandLine>
+                    <CommandLine condition="contains">-e </CommandLine>
+                    <CommandLine condition="contains">-decode</CommandLine>
+                    <CommandLine condition="contains">frombase64string</CommandLine>
+                    <CommandLine condition="contains">Convert.FromBase64String</CommandLine>
+                    
+                    <!-- Window/Visibility Control -->
+                    <CommandLine condition="contains">-w</CommandLine>
+                    <CommandLine condition="contains">hidden</CommandLine>
+                    <CommandLine condition="contains">-window</CommandLine>
+                    <CommandLine condition="contains">-windowstyle</CommandLine>
+                    <CommandLine condition="contains">-noninteractive</CommandLine>
+                    
+                    <!-- No Profile/Noexit -->
+                    <CommandLine condition="contains">-nop</CommandLine>
+                    <CommandLine condition="contains">-noprofile</CommandLine>
+                    <CommandLine condition="contains">-noexit</CommandLine>
+                    
+                    <!-- Command Execution -->
+                    <CommandLine condition="contains">-command</CommandLine>
+                    <CommandLine condition="contains">-c </CommandLine>
+                    <CommandLine condition="contains">iex</CommandLine>
+                    <CommandLine condition="contains">invoke-expression</CommandLine>
+                    <CommandLine condition="contains">invoke-webrequest</CommandLine>
+                    <CommandLine condition="contains">iwr </CommandLine>
+                    <CommandLine condition="contains">wget </CommandLine>
+                    <CommandLine condition="contains">curl </CommandLine>
+                    
+                    <!-- File Download/Network -->
+                    <CommandLine condition="contains">downloadstring</CommandLine>
+                    <CommandLine condition="contains">downloadfile</CommandLine>
+                    <CommandLine condition="contains">net.webclient</CommandLine>
+                    <CommandLine condition="contains">start-bitstransfer</CommandLine>
+                </Rule>
+
+                <!-- CMD Suspicious Flags -->
+                <Rule name="CMD Suspicious Flags">
+                    <CommandLine condition="contains">/c</CommandLine>
+                    <CommandLine condition="contains">/r</CommandLine>
+                    <CommandLine condition="contains">/k</CommandLine>
+                    <CommandLine condition="contains">^</CommandLine>
+                    <CommandLine condition="contains">&&</CommandLine>
+                    <CommandLine condition="contains">||</CommandLine>
+                    <CommandLine condition="contains">stdin</CommandLine>
+                </Rule>
+
+                <!-- WMIC Suspicious -->
+                <Rule name="WMIC Suspicious">
+                    <CommandLine condition="contains">wmic</CommandLine>
+                    <CommandLine condition="contains">process call create</CommandLine>
+                    <CommandLine condition="contains">shadowcopy delete</CommandLine>
+                </Rule>
+
+                <!-- Rundll32 Suspicious -->
+                <Rule name="Rundll32 Suspicious">
+                    <CommandLine condition="contains">javascript:</CommandLine>
+                    <CommandLine condition="contains">vbscript:</CommandLine>
+                    <CommandLine condition="contains">.dll,</CommandLine>
+                    <CommandLine condition="contains">.ocx,</CommandLine>
+                </Rule>
+
+                <!-- Regsvr32 Suspicious -->
+                <Rule name="Regsvr32 Suspicious">
+                    <CommandLine condition="contains">/i:</CommandLine>
+                    <CommandLine condition="contains">/u</CommandLine>
+                    <CommandLine condition="contains">/s</CommandLine>
+                    <CommandLine condition="contains">scrobj.dll</CommandLine>
+                </Rule>
+
+                <!-- Script Execution -->
+                <Rule name="Script Execution">
+                    <CommandLine condition="contains">.vbs</CommandLine>
+                    <CommandLine condition="contains">.js</CommandLine>
+                    <CommandLine condition="contains">.ps1</CommandLine>
+                    <CommandLine condition="contains">.hta</CommandLine>
+                    <CommandLine condition="contains">.wsf</CommandLine>
+                </Rule>
+            </ProcessCreate>
+        </RuleGroup>
+    </EventFiltering>
+</Sysmon>

@@ -1,0 +1,44 @@
+<Sysmon schemaversion="4.81">
+  <EventFiltering>
+    <!-- Process Creation - More targeted for SMBGhost -->
+    <RuleGroup name="Process Creation" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!-- Only suspicious process combinations -->
+        <Rule groupRelation="and">
+          <ParentImage condition="is">C:\Windows\System32\spoolsv.exe</ParentImage>
+          <Image condition="contains any">cmd.exe;powershell.exe;wscript.exe;cscript.exe;bitsadmin.exe;certutil.exe</Image>
+        </Rule>
+        <!-- Capture unusual integrity level changes -->
+        <Rule groupRelation="and">
+          <ParentImage condition="is">C:\Windows\System32\spoolsv.exe</ParentImage>
+          <IntegrityLevel>System</IntegrityLevel>
+          <Image condition="not begin with">C:\Windows\System32\</Image>
+        </Rule>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- Network - Focus on SMB exploitation patterns -->
+    <RuleGroup name="Network" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <Rule groupRelation="and">
+          <Image condition="is">C:\Windows\System32\spoolsv.exe</Image>
+          <DestinationPort>445</DestinationPort>
+          <!-- Exclude normal print traffic -->
+          <DestinationIp condition="begin with">10.;192.168.;172.16.</DestinationIp>
+        </Rule>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- Process Access - Focus on memory manipulation -->
+    <RuleGroup name="Process Access" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <Rule groupRelation="and">
+          <TargetImage condition="is">C:\Windows\System32\spoolsv.exe</TargetImage>
+          <GrantedAccess>0x1F0FFF;0x1F1FFF</GrantedAccess>
+          <!-- Exclude legitimate Windows processes -->
+          <SourceImage condition="not begin with">C:\Windows\System32\</SourceImage>
+        </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

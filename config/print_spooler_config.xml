@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Sysmon schemaversion="4.81">
+    <HashAlgorithms>md5,sha256,IMPHASH</HashAlgorithms>
+    <EventFiltering>
+        <!-- File create monitoring -->
+        <RuleGroup name="PrintSpooler DLL Creation Detection" groupRelation="or">
+            <FileCreate onmatch="include">
+                <!-- Detect DLL creation by Print Spooler service -->
+                <Rule name="PrintSpoolerDLLCreation" groupRelation="and">
+                    <Image condition="is">C:\Windows\System32\spoolsv.exe</Image>
+                    <TargetFilename condition="end with">.dll</TargetFilename>
+                </Rule>
+            </FileCreate>
+
+            <!-- Additional suspicious paths commonly used in PrintNightmare -->
+            <FileCreate onmatch="include">
+                <Rule name="PrintSpoolerSuspiciousPaths" groupRelation="and">
+                    <Image condition="is">C:\Windows\System32\spoolsv.exe</Image>
+                    <TargetFilename condition="contains">\spool\drivers\</TargetFilename>
+                    <TargetFilename condition="end with">.dll</TargetFilename>
+                </Rule>
+            </FileCreate>
+        </RuleGroup>
+
+        <!-- Exclude known good DLL creations to reduce noise -->
+        <FileCreate onmatch="exclude">
+            <!-- Add known good print driver DLLs here if needed -->
+            <TargetFilename condition="begin with">C:\Windows\System32\spool\SERVERS\</TargetFilename>
+            <TargetFilename condition="begin with">C:\Windows\System32\spool\PRINTERS\</TargetFilename>
+        </FileCreate>
+    </EventFiltering>
+</Sysmon>
