@@ -14,10 +14,13 @@
           <IntegrityLevel>High</IntegrityLevel>
         </Rule>
 
-        <!-- UACME #33 - Fodhelper -->
+        <!-- UACME #33 - Fodhelper - More Specific -->
         <Rule name="UACME33" groupRelation="and">
           <ParentImage condition="is">c:\windows\system32\fodhelper.exe</ParentImage>
           <IntegrityLevel>High</IntegrityLevel>
+          <Image condition="contains any">cmd.exe;powershell.exe;rundll32.exe;regsvr32.exe</Image>
+          <!-- Additional check for registry related operations -->
+          <CommandLine condition="contains any">reg;regedit;powershell;cmd</CommandLine>
         </Rule>
 
         <!-- UACME #36 - WUSA -->
@@ -30,9 +33,10 @@
         </Rule>
 
         <!-- UACME #34 - Cleanmgr -->
-        <Rule name="UACME34">
+        <Rule name="UACME34" groupRelation="and">
           <CommandLine condition="contains">cleanmgr.exe /autoclean</CommandLine>
           <IntegrityLevel>High</IntegrityLevel>
+          <ParentImage condition="is not">c:\windows\explorer.exe</ParentImage>
         </Rule>
 
         <!-- UACME #37 - DCCW -->
@@ -43,7 +47,7 @@
         </Rule>
 
         <!-- UACME #32 - OSK -->
-        <Rule name="UACME32">
+        <Rule name="UACME32" groupRelation="and">
           <Image condition="is">c:\program files\windows media player\osk.exe</Image>
           <IntegrityLevel>High</IntegrityLevel>
         </Rule>
@@ -52,14 +56,28 @@
         <Rule name="UACME45" groupRelation="and">
           <ParentImage condition="is">c:\windows\system32\slui.exe</ParentImage>
           <IntegrityLevel>High</IntegrityLevel>
+          <Image condition="contains any">cmd.exe;powershell.exe;rundll32.exe;regsvr32.exe</Image>
         </Rule>
       </ProcessCreate>
     </RuleGroup>
 
-    <!-- Default exclude rules to reduce noise -->
+    <!-- Exclude legitimate administrative tools and operations -->
     <ProcessCreate onmatch="exclude">
+      <!-- System and Low integrity processes -->
       <IntegrityLevel>AppContainer</IntegrityLevel>
       <IntegrityLevel>Low</IntegrityLevel>
+      
+      <!-- Legitimate admin tools -->
+      <Image condition="contains">Sysmon</Image>
+      <Image condition="contains">SysinternalsSuite</Image>
+      <CommandLine condition="contains">-c sysmonconfig</CommandLine>
+      <CommandLine condition="contains">-c \</CommandLine>
+      
+      <!-- Standard Windows processes -->
+      <ParentImage condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</ParentImage>
+      <ParentImage condition="is">C:\Windows\System32\cmd.exe</ParentImage>
+      <Image condition="begin with">C:\Program Files</Image>
+      <Image condition="begin with">C:\Program Files (x86)</Image>
     </ProcessCreate>
   </EventFiltering>
 </Sysmon>
