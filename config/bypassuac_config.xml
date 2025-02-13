@@ -15,7 +15,7 @@
         </Rule>
 
         <!-- UACME #33 - Fodhelper -->
-        <Rule name="UACME33">
+        <Rule name="UACME33" groupRelation="and">
           <ParentImage condition="is">c:\windows\system32\fodhelper.exe</ParentImage>
           <IntegrityLevel>High</IntegrityLevel>
         </Rule>
@@ -49,7 +49,7 @@
         </Rule>
 
         <!-- UACME #45 - SLUI -->
-        <Rule name="UACME45">
+        <Rule name="UACME45" groupRelation="and">
           <ParentImage condition="is">c:\windows\system32\slui.exe</ParentImage>
           <IntegrityLevel>High</IntegrityLevel>
         </Rule>
