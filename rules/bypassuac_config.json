@@ -1,0 +1,104 @@
+{
+    "rule": {
+      "name": "Windows UAC Bypass Attempt Detection",
+      "type": "eql",
+      "risk_score": 75,
+      "severity": "high",
+      "description": "Detects attempts to bypass User Account Control (UAC) using known techniques tracked in UACMe",
+      "query": """
+        process where event.type == "start" and
+        /* Common characteristics of UAC bypass */
+        process.Integrity_level == "high" and
+        
+        /* UACME #23 - DISM XML */
+        (
+          (process.parent.command_line != null and 
+           process.parent.command_line : "*c:\\windows\\system32\\dism.exe*" and
+           process.parent.command_line : "*.xml*" and
+           not process.executable : "c:\\users\\*" and
+           not process.executable : "*\\dismhost.exe")
+        ) or
+        
+        /* UACME #33 - Fodhelper */
+        (
+          process.parent.executable == "c:\\windows\\system32\\fodhelper.exe" and
+          process.executable : ("*cmd.exe*", "*powershell.exe*", "*rundll32.exe*", "*regsvr32.exe*") and
+          process.command_line : ("*reg*", "*regedit*", "*powershell*", "*cmd*")
+        ) or
+        
+        /* UACME #36 - WUSA */
+        (
+          process.command_line : "*c:\\windows\\system32\\wusa.exe*" and
+          process.command_line : "*/quiet*" and
+          process.working_directory == "c:\\windows\\system32\\" and
+          process.parent.executable != "c:\\windows\\explorer.exe"
+        ) or
+        
+        /* UACME #34 - Cleanmgr */
+        (
+          process.command_line : "*cleanmgr.exe /autoclean*" and
+          process.parent.executable != "c:\\windows\\explorer.exe"
+        ) or
+        
+        /* UACME #37 - DCCW */
+        (
+          process.parent.executable : "*c:\\windows\\dccw.exe*" and
+          process.executable != "c:\\windows\\system32\\cttune.exe"
+        ) or
+        
+        /* UACME #32 - OSK */
+        (
+          process.executable == "c:\\program files\\windows media player\\osk.exe"
+        ) or
+        
+        /* UACME #45 - SLUI */
+        (
+          process.parent.executable == "c:\\windows\\system32\\slui.exe" and
+          process.executable : ("*cmd.exe*", "*powershell.exe*", "*rundll32.exe*", "*regsvr32.exe*")
+        ) and
+        
+        /* Exclude legitimate processes */
+        not (
+          process.Integrity_level : ("AppContainer", "Low") or
+          process.executable : ("*Sysmon*", "*SysinternalsSuite*") or
+          process.command_line : ("*-c sysmonconfig*", "*-c \\*") or
+          process.parent.executable : (
+            "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "C:\\Windows\\System32\\cmd.exe"
+          ) or
+          process.executable : (
+            "C:\\Program Files\\*",
+            "C:\\Program Files (x86)\\*"
+          )
+        )
+      """,
+      "threat": {
+        "framework": "MITRE ATT&CK",
+        "tactic": {
+          "id": "TA0004",
+          "name": "Privilege Escalation",
+          "reference": "https://attack.mitre.org/tactics/TA0004/"
+        },
+        "technique": [{
+          "id": "T1548.002",
+          "name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+          "reference": "https://attack.mitre.org/techniques/T1548/002/"
+        }]
+      },
+      "false_positives": [
+        "Legitimate administrative tasks using these binaries",
+        "Software installation or update processes",
+        "System maintenance operations"
+      ],
+      "tags": [
+        "windows",
+        "privilege_escalation",
+        "uac_bypass",
+        "attack.t1548.002"
+      ],
+      "metadata": {
+        "creation_date": "2025-02-13",
+        "updated_date": "2025-02-13"
+      }
+    }
+  }
