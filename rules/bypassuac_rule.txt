@@ -1,0 +1,9 @@
+data.win.system.eventID: "1" and data.win.eventdata.integrityLevel: "High" and (
+  (data.win.eventdata.parentCommandLine: "*c:\\windows\\system32\\dism.exe*" and data.win.eventdata.parentCommandLine: "*.xml*" and data.win.eventdata.image: "c:\\users\\*" and data.win.eventdata.image: "*\\dismhost.exe") or 
+  (data.win.eventdata.parentImage: "*c:\\windows\\system32\\fodhelper.exe*" and (data.win.eventdata.image: "*cmd.exe*" or data.win.eventdata.image: "*powershell.exe*" or data.win.eventdata.image: "*rundll32.exe*" or data.win.eventdata.image: "*regsvr32.exe*")) or
+  (data.win.eventdata.commandLine: "*c:\\windows\\system32\\wusa.exe*" and data.win.eventdata.commandLine: "*/quiet*" and data.win.eventdata.currentDirectory: "C:\\Windows\\system32\\" and data.win.eventdata.parentImage: "*c:\\windows\\explorer.exe*") or
+  (data.win.eventdata.commandLine: "*cleanmgr.exe /autoclean*" and data.win.eventdata.parentImage: "*c:\\windows\\explorer.exe*") or
+  (data.win.eventdata.parentImage: "*c:\\windows\\dccw.exe*" and data.win.eventdata.image: "*c:\\windows\\system32\\cttune.exe*") or
+  (data.win.eventdata.image: "*c:\\program files\\windows media player\\osk.exe*") or
+  (data.win.eventdata.parentImage: "*c:\\windows\\system32\\slui.exe*" and (data.win.eventdata.image: "*cmd.exe*" or data.win.eventdata.image: "*powershell.exe*" or data.win.eventdata.image: "*rundll32.exe*" or data.win.eventdata.image: "*regsvr32.exe*"))
+)

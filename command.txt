@@ -1,0 +1,6 @@
+elasticdump \
+  --input=https://elastic:@localhost/wazuh-alerts-* \
+  --output=wazuh-alerts.json \
+  --type=data \
+  --limit=10000 \
+  --compress
