@@ -170,7 +170,7 @@ def main():
             # verify_certs=os.getenv('ES_USE_SSL', 'true').lower() == 'true'
         )
 
-        start_time = (datetime.now() - timedelta(hours=300)).isoformat()
+        start_time = (datetime.now() - timedelta(hours=3000)).isoformat()
 
         additional_filters = [{"term": {"agent.id": "005"}}]
 
